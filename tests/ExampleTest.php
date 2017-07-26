@@ -5,20 +5,6 @@ use Laravel\Lumen\Testing\DatabaseTransactions;
 
 class ExampleTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
-    {
-        $this->get('/');
-
-        $this->assertEquals(
-            $this->app->version(), $this->response->getContent()
-        );
-    }
-
     public function testInverterReturnsCorrectInvertedString()
     {
         $this->get('/invert', [
@@ -30,7 +16,7 @@ class ExampleTest extends TestCase
         ]);
 
         $this->seeJsonEquals([
-            'result' => ['? uoy era woh olleh']
+            'result' => "? uoy era woh olleh"
         ]);
     }
 }
