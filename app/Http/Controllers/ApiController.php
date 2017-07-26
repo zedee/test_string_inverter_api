@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class ApiController extends Controller
 {
@@ -36,7 +35,8 @@ class ApiController extends Controller
         $reversed = implode(' ', array_reverse($reversed));
 
         return response()->json([
-            'result' => $reversed]);
+            'result' => $reversed
+        ]);
     }
 
     //

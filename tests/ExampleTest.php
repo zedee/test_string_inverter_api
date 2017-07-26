@@ -18,4 +18,19 @@ class ExampleTest extends TestCase
             $this->app->version(), $this->response->getContent()
         );
     }
+
+    public function testInverterReturnsCorrectInvertedString()
+    {
+        $this->get('/invert', [
+            'str1' => 'hello',
+            'str2' => 'how',
+            'str3' => 'are',
+            'str4' => 'you',
+            'str5' => '?'
+        ]);
+
+        $this->seeJsonEquals([
+            'result' => ['? uoy era woh olleh']
+        ]);
+    }
 }
